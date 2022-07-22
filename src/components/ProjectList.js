@@ -8,7 +8,7 @@ function ProjectList({ projects }) {
       <h2>My Projects</h2>
       <div id="project-list">
         {/* render ProjectItem components here */}
-        <ProjectItem
+        {/* <ProjectItem
           key={projects[0].id}
           name={projects[0].name}
           about={projects[0].about}
@@ -25,7 +25,18 @@ function ProjectList({ projects }) {
           name={projects[2].name}
           about={projects[2].about}
           technologies={projects[2].technologies}
-        />
+        /> */}
+        {projects.map((project) => {
+          return (
+            <React.Fragment key={project.id}>
+              <ProjectItem
+                name={project.name}
+                about={project.about}
+                technologies={project.technologies}
+              />
+            </React.Fragment>
+          );
+        })}
       </div>
     </div>
   );
